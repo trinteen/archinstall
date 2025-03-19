@@ -1,0 +1,2 @@
+# My Archlinux install script
+
