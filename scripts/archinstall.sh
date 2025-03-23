@@ -249,11 +249,11 @@ echo "=> 6. Post-install chroot settings"
     #=> Exit chroot:
     arch-chroot /mnt bash -c "exit" || error_log "Not EXIT chroot problem."
 
-#=> Umount disk & reboot system:
-echo "=> 7. Umount ${V_SYS_HD} & reboot system..."
-    
-    #=> umount disk:
-    umount -l /mnt 2> /dev/null || error_log "Umount All partition after instalation problem."
-
-    #=> reboot system:
-    sleep 10 && reboot || error_log "Script dont reboot system."
+##=> Umount disk & reboot system:
+#echo "=> 7. Umount ${V_SYS_HD} & reboot system..."
+#    
+#    #=> umount disk:
+#    umount -l /mnt 2> /dev/null || error_log "Umount All partition after instalation problem."
+#
+#    #=> reboot system:
+#    sleep 10 && reboot || error_log "Script dont reboot system."
