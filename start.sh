@@ -1,5 +1,5 @@
 #!/bin/sh
 
-pacman -Sy dialog
+pacman --noconfirm --needed -Sy dialog
 
 sh ./scripts/gui.sh
