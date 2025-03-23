@@ -2,4 +2,4 @@
 
 pacman -Sy dialog
 
-source ./script/gui.sh
+sh ./script/gui.sh
