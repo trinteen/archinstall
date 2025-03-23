@@ -1,0 +1,21 @@
+build_cfg() {
+    CFG="#!/bin/sh\r\n"
+    CFG+="export V_SYS_HD=\"${install_gui_drive}\"\r\n"
+    CFG+="export V_BOOT_SIZE=\"${install_gui_bootpar}\"\r\n"
+    CFG+="export V_SWAP_SIZE=\"${install_gui_swappar}\"\r\n"
+    CFG+="export V_COUNTRY=\"${install_gui_mirrorlist}\"\r\n"
+    CFG+="export V_TIMEZONE=\"${install_gui_timezone}\"\r\n"
+    CFG+="export V_LANGUAGE=\"${install_gui_language}\"\r\n"
+    CFG+="export V_KEYMAP=\"${install_gui_keymap}\"\r\n"
+    CFG+="export V_HOSTNAME=\"${install_gui_hostname}\"\r\n"
+    CFG+="export V_ROOT_PWD=\"${install_gui_rootpwd}\"\r\n"
+    CFG+="export V_USER_NAME=\"${install_gui_user}\"\r\n"
+    CFG+="export V_USER_PASS=\"${install_gui_pass}\"\r\n"
+    CFG+="export V_GUI_SEL=\"${install_gui_ui}\"\r\n"
+    CFG+="export V_EXTRA_PKG=\"$(echo ${install_gui_extrapkg[@]})\"\r\n"
+    CFG+="export V_AUR_PKG=(\"$(echo ${install_gui_aurpkg[@]})\")\r\n"
+    CFG+="export V_CPU_TYPE=\"${install_gui_cpu}\"\r\n"
+    CFG+="export V_GPU_SEL=\"${install_gui_gpu}\"\r\n"
+    CFG+="export V_SERVICES_MY=(\"$(echo ${install_gui_services})\")\r\n"
+    echo -e "${CFG}" > archinstall_setup_cfg.sh
+}
