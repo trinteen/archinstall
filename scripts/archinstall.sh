@@ -255,7 +255,8 @@ echo "=> 6. Post-install chroot settings"
     DATE=$(date +%Y%m%dT%H%M%S)
     NAME_FILE=$(echo "archinstall_${DATE}")
     mkdir -p "/mnt/home/${V_USER_NAME}/backup-archinstall-profile"
-    cp "./archinstall_setup_cfg.sh" "/mnt/home/${V_USER_NAME}/backup-archinstall-profile/${NAME_FILE}"
+    cp "./archinstall_setup_cfg.sh" "/mnt/home/${V_USER_NAME}/backup-archinstall-profile/${NAME_FILE}.sh"
+    chown -R ${V_USER_NAME} /mnt/home/${V_USER_NAME}/backup-archinstall-profile/
 
 #=> Umount disk & reboot system:
 echo "=> 7. Umount ${V_SYS_HD} & reboot system..."
