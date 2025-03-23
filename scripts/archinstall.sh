@@ -116,12 +116,12 @@ echo "=> 4. MOUNTING PARTITIONS = ${V_SYS_HD} [type:${V_SYS_HD_TYPENAME}]"
     btrfs sub create /mnt/@home || error_log "Create BTRFS (sub @home) problem."
     umount /mnt || error_log "Umounting /mnt problem."
     mount -o noatime,nodiratime,compress=zstd,space_cache=v2,ssd,subvol=@ ${V_SYS_HD}${V_SYS_HD_TYPE}3 /mnt || error_log "Mount (sub @) to /mnt problem."
-    mkdir -p /mnt/home || error_log "Create @home dir to /mnt/home"
+    mkdir -p "/mnt/home" || error_log "Create @home dir to /mnt/home"
     mount -o noatime,nodiratime,compress=zstd,space_cache=v2,ssd,subvol=@home ${V_SYS_HD}${V_SYS_HD_TYPE}3 /mnt/home || error_log "Mount (sub @home) to /mnt/home problem."
 
     #=> Mount BOOT partition:
     echo ":: Mount BOOT partition to /mnt/boot"
-    mkdir -p /mnt/boot || error_log "Mount BOOT partition (create dir problem)."
+    mkdir -p "/mnt/boot" || error_log "Mount BOOT partition (create dir problem)."
     mount ${V_SYS_HD}${V_SYS_HD_TYPE}1 /mnt/boot || error_log "Mount BOOT partition to /mnt/boot problem."
 
 #=> Installing system:
@@ -249,11 +249,19 @@ echo "=> 6. Post-install chroot settings"
     #=> Exit chroot:
     arch-chroot /mnt bash -c "exit" || error_log "Not EXIT chroot problem."
 
-##=> Umount disk & reboot system:
-#echo "=> 7. Umount ${V_SYS_HD} & reboot system..."
-#    
-#    #=> umount disk:
-#    umount -l /mnt 2> /dev/null || error_log "Umount All partition after instalation problem."
-#
-#    #=> reboot system:
-#    sleep 10 && reboot || error_log "Script dont reboot system."
+#=> Backup profile:
+
+    #=> archinstall_profile.sh:
+    DATE=$(date +%Y%m%dT%H%M%S)
+    NAME_FILE=$(echo "archinstall_${DATE}")
+    mkdir -p "/mnt/home/${V_USER_NAME}/backup-archinstall-profile"
+    cp "./archinstall_setup_cfg.sh" "/mnt/home/${V_USER_NAME}/backup-archinstall-profile/${NAME_FILE}"
+
+#=> Umount disk & reboot system:
+echo "=> 7. Umount ${V_SYS_HD} & reboot system..."
+    
+    #=> umount disk:
+    umount -l /mnt 2> /dev/null || error_log "Umount All partition after instalation problem."
+
+    #=> reboot system:
+    sleep 10 && reboot || error_log "Script dont reboot system."

@@ -21,7 +21,6 @@ install_gui_menu_func() {
     MENU+=("13" "$(echo "Set AUR PACKAGES            [${install_gui_aurpkg_ok}]" | sed 's/ /\xc2\xa0/g')")
     MENU+=("14" "$(echo "Add more services           [${install_gui_services_ok}]" | sed 's/ /\xc2\xa0/g')")
     MENU+=("${SPA}"  "$(echo "==============================" | sed 's/=/\xc2\xa0/g')")
-    MENU+=("S"  "$(echo "Save profile                   " | sed 's/ /\xc2\xa0/g')")
     MENU+=("L"  "$(echo "INSTALL (with profile file)    " | sed 's/ /\xc2\xa0/g')")
 
     if [ "${install_gui_drive_ok}" == "X" ] && \
@@ -91,9 +90,6 @@ install_gui_menu_func() {
             ;;
         I)
             build_cfg;run_install
-            ;;
-        S)
-            install_gui_saveprofile_func
             ;;
         L)
             install_gui_loadprofile_func
