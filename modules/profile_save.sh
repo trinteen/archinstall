@@ -16,7 +16,7 @@ install_gui_saveprofile_func() {
     install_gui_saveprofile_ok="X"
     if [ -f "./archinstall_setup_cfg.sh" ];then
         TXT=$(cat ./archinstall_setup_cfg.sh)
-        FOOTER=$(echo "#\n# Generate archinstall script - ${install_gui_saveprofile}\n#")
+        FOOTER=$(echo "\n#\n# Generate archinstall script - ${install_gui_saveprofile}\n#")
         echo -e "${TXT}${FOOTER}" > ./profiles/${install_gui_saveprofile}.sh
     fi
     install_gui_menu_func
