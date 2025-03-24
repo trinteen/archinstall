@@ -256,7 +256,7 @@ echo "=> 6. Post-install chroot settings"
     NAME_FILE=$(echo "archinstall_${DATE}")
     mkdir -p "/mnt/home/${V_USER_NAME}/backup-archinstall-profile" || error_log "Backup archinstall script to User dir (create dir)."
     cp "./archinstall_setup_cfg.sh" "/mnt/home/${V_USER_NAME}/backup-archinstall-profile/${NAME_FILE}.sh" || error_log "Backup archinstall script to User dir (copy file)."
-    arch-chroot /mnt bash -c "chown -R ${V_USER_NAME} /mnt/home/${V_USER_NAME}/backup-archinstall-profile" 2> /dev/null || error_log "Backup archinstall script to User dir. (chown dir)"
+    arch-chroot /mnt bash -c "chown -R ${V_USER_NAME} /home/${V_USER_NAME}/backup-archinstall-profile" 2> /dev/null || error_log "Backup archinstall script to User dir. (chown dir)"
     arch-chroot /mnt bash -c "exit" || error_log "Not EXIT chroot problem."
 
 #=> Umount disk & reboot system:
