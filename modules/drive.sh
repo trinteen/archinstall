@@ -9,5 +9,5 @@ install_gui_drive_func() {
 	export GUI_DRIVE=/dev/${GUI_DRIVE}
 	install_gui_drive=${GUI_DRIVE}
 	install_gui_drive_ok="X"
-	install_gui_menu_func
+	install_gui_menu_func "2"
 }

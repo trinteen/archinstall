@@ -19,5 +19,5 @@ install_gui_timezone_func() {
 	install_gui_timezone_ok="X"
     rm cache_timezone
     rm cache_timezone2
-	install_gui_menu_func
+	install_gui_menu_func "4"
 }

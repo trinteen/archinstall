@@ -15,5 +15,5 @@ install_gui_user_func() {
         install_gui_pass="${GUI_USER_PASS}"
     fi
     install_gui_user_ok="X"
-    install_gui_menu_func
+    install_gui_menu_func "11"
 }

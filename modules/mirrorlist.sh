@@ -20,5 +20,5 @@ install_gui_mirrorlist_func() {
 	install_gui_mirrorlist=${GUI_MIRRORLIST}
 	install_gui_mirrorlist_ok="X"
 	rm cache_mirrorlist
-	install_gui_menu_func
+	install_gui_menu_func "3"
 }

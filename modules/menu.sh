@@ -42,7 +42,7 @@ install_gui_menu_func() {
     MENU+=("${SPA}"  "$(echo "==============================" | sed 's/=/\xc2\xa0/g')")
 
     MENU+=("X"  "$(echo "EXIT" | sed 's/ /\xc2\xa0/g')")
-    export GUI_MENU=$(dialog --stdout --title "MAIN MENU" --backtitle "${AUTHOR_T}" --menu "(*=require) : " ${WINDOW_H} ${WINDOW_W} ${WINDOW_L} ${MENU[@]})
+    export GUI_MENU=$(dialog --default-item "$1" --stdout --title "MAIN MENU" --backtitle "${AUTHOR_T}" --menu "(*=require) : " ${WINDOW_H} ${WINDOW_W} ${WINDOW_L} ${MENU[@]})
     install_gui_menu=${GUI_MENU}
 
     case ${GUI_MENU} in 

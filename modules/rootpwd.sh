@@ -11,5 +11,5 @@ install_gui_rootpwd_func() {
         install_gui_rootpwd=${GUI_ROOTPWD}
     fi
     install_gui_rootpwd_ok="X"
-    install_gui_menu_func
+    install_gui_menu_func "10"
 }

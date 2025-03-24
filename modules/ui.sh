@@ -14,5 +14,5 @@ install_gui_ui_func() {
     export GUI_UI=$(dialog --stdout --backtitle "${AUTHOR_T}"  --title "Desktop UI" --menu "Select : " ${WINDOW_H} ${WINDOW_W} ${WINDOW_L} ${WM[@]})
     install_gui_ui=${GUI_UI}
     install_gui_ui_ok="X"
-    install_gui_menu_func
+    install_gui_menu_func "12"
 }

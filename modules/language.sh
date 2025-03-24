@@ -20,5 +20,5 @@ install_gui_language_func() {
     install_gui_language=${GUI_LANGUAGE}
     install_gui_language_ok="X"
     rm cache_language
-    install_gui_menu_func
+    install_gui_menu_func "5"
 }

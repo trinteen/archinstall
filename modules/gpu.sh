@@ -15,5 +15,5 @@ install_gui_gpu_func() {
     export GUI_GPU=$(dialog --stdout --title "Graphic card" --backtitle "${AUTHOR_T}" --menu "Drivers : " ${WINDOW_H} ${WINDOW_W} ${WINDOW_L} ${gpu[@]})
     install_gui_gpu=${GUI_GPU}
     install_gui_gpu_ok="X"
-    install_gui_menu_func
+    install_gui_menu_func "8"
 }

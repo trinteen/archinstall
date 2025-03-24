@@ -10,5 +10,5 @@ install_gui_cpu_func() {
     export GUI_CPU=$(dialog --stdout --title "Ucode for CPUs" --backtitle "${AUTHOR_T}" --menu "CPU drivers : " ${WINDOW_H} ${WINDOW_W} ${WINDOW_L} ${cpu[@]})
     install_gui_cpu=${GUI_CPU}
     install_gui_cpu_ok="X"
-    install_gui_menu_func
+    install_gui_menu_func "7"
 }

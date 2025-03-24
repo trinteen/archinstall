@@ -13,5 +13,5 @@ install_gui_keymap_func() {
     install_gui_keymap=${GUI_KEYMAP}
     install_gui_keymap_ok="X"
     rm cache_keymap
-    install_gui_menu_func
+    install_gui_menu_func "6"
 }
