@@ -78,7 +78,7 @@ echo "=> 3. SETUP PARTITIONS = ${V_SYS_HD} [type:${V_SYS_HD_TYPENAME}]"
 
     #=> Clearing system drive:
     echo ":: Clearing system drive.."
-    parted -s ${V_SYS_HD} mklabel GPT 2> /dev/null || error_log "Create drive: GPT problem."
+    parted -s ${V_SYS_HD} mklabel GPT 2> /dev/null || error_log "Create drive: GPT problem (Recommendation: RESTART SYSTEM)"
 
     #=> Create EFI partition:
     echo ":: Create EFI partition"
