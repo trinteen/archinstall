@@ -11,17 +11,22 @@ Program install as:
 
 
 # Get script:
-1) Clone github repo:
+1) Install Git:
+```
+pacman -Sy git
+```
+
+2) Clone github repo:
 ```
 git clone https://github.com/trinteen/archinstall
 ```
 
-2) Enter to directory:
+3) Enter to directory:
 ```
 cd archinstall
 ```
 
-3) Run
+4) Run
 ```
 sh start.sh
 ```
