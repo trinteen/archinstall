@@ -33,19 +33,19 @@ fi
 
 #=> GUI Select:
 if [[ ${V_GUI_SEL} == "kde" ]]; then
-    export V_GUI="ark dolphin kate kitty plasma plasma-workspace kde-applications sddm"
+    export V_GUI="ark dolphin kate alacritty plasma plasma-workspace kde-applications sddm"
     export V_SERVICES=("sddm.service ${V_SERVICES_MY}")
 elif [[ ${V_GUI_SEL} == "cinnamon" ]]; then
-    export V_GUI="blueman bluez-utils cinnamon cinnamon-translations engrampa gnome-keyring gnome-screenshot kitty gvfs-smb system-config-printer xdg-user-dirs-gtk xed lightdm lightdm-gtk-greeter"
+    export V_GUI="blueman bluez-utils cinnamon cinnamon-translations engrampa gnome-keyring gnome-screenshot alacritty gvfs-smb system-config-printer xdg-user-dirs-gtk xed lightdm lightdm-gtk-greeter"
     export V_SERVICES=("lightdm ${V_SERVICES_MY}")
 elif [[ ${V_GUI_SEL} == "gnome" ]]; then
-    export V_GUI="gnome gnome-tweaks gdm gnome-keyring gvfs gvfs-smb kitty"
+    export V_GUI="gnome gnome-tweaks gdm gnome-keyring gvfs gvfs-smb alacritty"
     export V_SERVICES=("gdm ${V_SERVICES_MY}")
 elif [[ ${V_GUI_SEL} == "xfce" ]]; then
-    export V_GUI="gvfs xarchiver kitty xfce4 xfce4-goodies xfce4-screenshooter xfce4-screensaver xfce4-power-manager system-config-printer pavucontrol xfce4-places-plugin xfce4-mixer gnome-keyring lightdm lightdm-gtk-greeter"
+    export V_GUI="gvfs xarchiver alacritty xfce4 xfce4-goodies xfce4-screenshooter xfce4-screensaver xfce4-power-manager system-config-printer pavucontrol xfce4-places-plugin xfce4-mixer gnome-keyring lightdm lightdm-gtk-greeter"
     export V_SERVICES=("lightdm ${V_SERVICES_MY}")
 elif [[ ${V_GUI_SEL} == "i3" ]]; then
-    export V_GUI="kitty dmenu i3-wm i3blocks i3lock i3status xss-lock xterm lightdm lightdm-gtk-greeter"
+    export V_GUI="alacritty dmenu i3-wm i3blocks i3lock i3status xss-lock xterm lightdm lightdm-gtk-greeter"
     export V_SERVICES=("lightdm ${V_SERVICES_MY}")
 fi
 
