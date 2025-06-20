@@ -28,7 +28,7 @@ elif [[ ${V_GPU_SEL} == "nvidia-open" ]]; then
 elif [[ ${V_GPU_SEL} == "nvidia" ]]; then
     export V_GPU="dkms nvidia-dkms xorg-server xorg-xinit"
 elif [[ ${V_GPU_SEL} == "vm" ]]; then
-    export V_GPU="mesa xf86-video-vmware xorg-server xorg-xinit"
+    export V_GPU="mesa xorg-server xorg-xinit"
 fi
 
 #=> GUI Select:
