@@ -32,21 +32,81 @@ elif [[ ${V_GPU_SEL} == "vm" ]]; then
 fi
 
 #=> GUI Select:
-if [[ ${V_GUI_SEL} == "kde" ]]; then
-    export V_GUI="ark dolphin kate alacritty plasma plasma-workspace kde-applications sddm"
-    export V_SERVICES=("sddm.service ${V_SERVICES_MY}")
+
+# awesome
+if [[ ${V_GUI_SEL} == "awesome" ]]; then
+    export V_GUI="alacritty lightdm lightdm-gtk-greeter awesome feh gnu-free-fonts slock terminus-font ttf-liberation xorg-server xorg-xinit xorg-xrandr xsel xterm"
+    export V_SERVICES=("lightdm.service ${V_SERVICES_MY}")
+
+# bspwm
+elif [[ ${V_GUI_SEL} == "bspwm" ]]; then
+    export V_GUI="alacritty lightdm lightdm-gtk-greeter bspwm dmenu rxvt-unicode sxhkd xdo"
+    export V_SERVICES=("lightdm.service ${V_SERVICES_MY}")
+
+# budgie
+elif [[ ${V_GUI_SEL} == "budgie" ]]; then
+    export V_GUI="alacritty lightdm lightdm-gtk-greeter budgie mate-terminal materia-gtk-theme nemo papirus-icon-theme"
+    export V_SERVICES=("gdm.service ${V_SERVICES_MY}")
+
+# cinnamon
 elif [[ ${V_GUI_SEL} == "cinnamon" ]]; then
     export V_GUI="blueman bluez-utils cinnamon cinnamon-translations engrampa gnome-keyring gnome-screenshot alacritty gvfs-smb system-config-printer xdg-user-dirs-gtk xed lightdm lightdm-gtk-greeter"
-    export V_SERVICES=("lightdm ${V_SERVICES_MY}")
+    export V_SERVICES=("lightdm.service ${V_SERVICES_MY}")
+
+# gnome
 elif [[ ${V_GUI_SEL} == "gnome" ]]; then
     export V_GUI="gnome gnome-tweaks gdm gnome-keyring gvfs gvfs-smb alacritty"
     export V_SERVICES=("gdm ${V_SERVICES_MY}")
-elif [[ ${V_GUI_SEL} == "xfce" ]]; then
-    export V_GUI="gvfs xarchiver alacritty xfce4 xfce4-goodies xfce4-screenshooter xfce4-screensaver xfce4-power-manager system-config-printer pavucontrol xfce4-places-plugin xfce4-mixer gnome-keyring lightdm lightdm-gtk-greeter"
-    export V_SERVICES=("lightdm ${V_SERVICES_MY}")
+
+# hyprland
+elif [[ ${V_GUI_SEL} == "###" ]]; then
+    export V_GUI="lightdm lightdm-gtk-greeter doplhin dunst grim hyprland kitty polkit-kde-agent qt5-wayland qt6-wayland slurp uwsm wofi xdg-desktop-portal-hyprland"
+    export V_SERVICES=("lightdm.service ${V_SERVICES_MY}")
+
+# i3
 elif [[ ${V_GUI_SEL} == "i3" ]]; then
     export V_GUI="alacritty dmenu i3-wm i3blocks i3lock i3status xss-lock xterm lightdm lightdm-gtk-greeter"
-    export V_SERVICES=("lightdm ${V_SERVICES_MY}")
+    export V_SERVICES=("lightdm.service ${V_SERVICES_MY}")
+
+# kde
+elif [[ ${V_GUI_SEL} == "kde" ]]; then
+    export V_GUI="ark dolphin kate alacritty plasma plasma-workspace kde-applications sddm"
+    export V_SERVICES=("sddm.service ${V_SERVICES_MY}")
+
+# lxqt
+elif [[ ${V_GUI_SEL} == "lxqt" ]]; then
+    export V_GUI="alacritty lightdm lightdm-gtk-greeter breeze-icons leafpad lxqt oxygen-icons slock ttf-freefont xdg-utils"
+    export V_SERVICES=("lightdm.service ${V_SERVICES_MY}")
+
+# mate
+elif [[ ${V_GUI_SEL} == "mate" ]]; then
+    export V_GUI="alacritty lightdm lightdm-gtk-greeter mate mate-extra"
+    export V_SERVICES=("lightdm.service ${V_SERVICES_MY}")
+
+# qtile
+elif [[ ${V_GUI_SEL} == "qtile" ]]; then
+    export V_GUI="alacritty lightdm lightdm-gtk-greeter qtile"
+    export V_SERVICES=("lightdm.service ${V_SERVICES_MY}")
+
+# sway
+elif [[ ${V_GUI_SEL} == "sway" ]]; then
+    export V_GUI="alacritty lightdm lightdm-gtk-greeter brightnessctl foot grim pavucontrol slurp sway swaybg swayidle swaylock waybar wmenu xorg-xwayland"
+    export V_SERVICES=("lightdm.service ${V_SERVICES_MY}")
+
+# xfce
+elif [[ ${V_GUI_SEL} == "xfce" ]]; then
+    export V_GUI="gvfs xarchiver alacritty xfce4 xfce4-goodies xfce4-screenshooter xfce4-screensaver xfce4-power-manager system-config-printer pavucontrol xfce4-places-plugin xfce4-mixer gnome-keyring lightdm lightdm-gtk-greeter"
+    export V_SERVICES=("lightdm.service ${V_SERVICES_MY}")
+
+# xmonad
+elif [[ ${V_GUI_SEL} == "xmonad" ]]; then
+    export V_GUI="alacritty lightdm lightdm-gtk-greeter dmenu xmonad xmonad-contrib xmonad-extra xterm"
+    export V_SERVICES=("lightdm.service ${V_SERVICES_MY}")
+
+# none
+elif [[ ${V_GUI_SEL} == "none" ]]; then
+    export V_GUI=""
+    export V_SERVICES=("${V_SERVICES_MY}")
 fi
 
 #=> Type drive:
