@@ -190,7 +190,8 @@ echo "=> 5. INSTALLING NEW SYSTEM TO ${V_SYS_HD}"
     #=> Pacman setting before install:
     echo ":: Update mirrorlist for country: ${V_COUNTRY}"
     pacman --noconfirm --needed -Sy pacman-contrib || error_log "PACMAN install pacman.contrib problem."
-    curl -s "https://archlinux.org/mirrorlist/?country=${V_COUNTRY}&protocol=https&use_mirror_status=on" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors - > /etc/pacman.d/mirrorlist || error_log "PACMAN generate mirrorlist problem."
+    #curl -s "https://archlinux.org/mirrorlist/?country=${V_COUNTRY}&protocol=https&use_mirror_status=on" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors - > /etc/pacman.d/mirrorlist || error_log "PACMAN generate mirrorlist problem."
+    reflector --verbose --sort rate -l 20 -c ${V_COUNTRY} --save /etc/pacman.d/mirrorlist
 
     #=> Run pacstrap:
     echo ":: Downloading packages for NEW SYSTEM"
