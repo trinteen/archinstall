@@ -53,6 +53,12 @@ elif [[ ${V_GUI_SEL} == "cinnamon" ]]; then
     export V_GUI="blueman bluez-utils cinnamon cinnamon-translations engrampa gnome-keyring gnome-screenshot alacritty gvfs-smb system-config-printer xdg-user-dirs-gtk xed lightdm lightdm-gtk-greeter"
     export V_SERVICES=("lightdm.service ${V_SERVICES_MY}")
 
+# cosmic
+elif [[ ${V_GUI_SEL} == "cosmic" ]]; then
+    export V_GUI="cosmic-session cosmic-text-editor cosmic-files cosmic-terminal cosmic-player cosmic-wallpapers alacritty gvfs-smb system-config-printer xdg-user-dirs-gtk xed cosmic-greeter"
+    export V_SERVICES=("cosmic-greeter.service ${V_SERVICES_MY}")
+
+
 # gnome
 elif [[ ${V_GUI_SEL} == "gnome" ]]; then
     export V_GUI="gnome gnome-tweaks gdm gnome-keyring gvfs gvfs-smb alacritty"

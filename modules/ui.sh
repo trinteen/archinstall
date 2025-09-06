@@ -8,6 +8,7 @@ install_gui_ui_func() {
     WM+=("awesome"  "$(echo "Awesome Window Manager" | sed 's/ /\xc2\xa0/g')")
     WM+=("bspwm"    "$(echo "Bspwm Window Manager" | sed 's/ /\xc2\xa0/g')")
     WM+=("budgie"   "$(echo "Budgie Desktop" | sed 's/ /\xc2\xa0/g')")
+    WM+=("cosmic"   "$(echo "Cosmic Desktop" | sed 's/ /\xc2\xa0/g')")
     WM+=("cinnamon" "$(echo "Cinnamon Desktop" | sed 's/ /\xc2\xa0/g')")
     WM+=("gnome"    "$(echo "Gnome Desktop" | sed 's/ /\xc2\xa0/g')")
     WM+=("hyprland" "$(echo "Hyperland Desktop" | sed 's/ /\xc2\xa0/g')")
