@@ -201,7 +201,7 @@ echo "=> 5. INSTALLING NEW SYSTEM TO ${V_SYS_HD}"
 
     #=> Run pacstrap:
     echo ":: Downloading packages for NEW SYSTEM"
-    pacstrap /mnt base btrfs-progs wget base-devel cups linux linux-headers linux-firmware nano git mc avahi samba smbclient gvfs gvfs-smb exfat-utls xorg fish networkmanager network-manager-applet efibootmgr wireless_tools wpa_supplicant os-prober mtools ${V_GPU} ${V_CPU_UCODE} ${V_GUI} || error_log "Install base system problem."
+    pacstrap /mnt base btrfs-progs wget base-devel cups linux linux-headers linux-firmware nano git mc avahi samba smbclient gvfs gvfs-smb exfat-utils xorg fish networkmanager network-manager-applet efibootmgr wireless_tools wpa_supplicant os-prober mtools ${V_GPU} ${V_CPU_UCODE} ${V_GUI} || error_log "Install base system problem."
 
     #=> Generate new FSTAB:
     echo ":: Generate new FSTAB file"
