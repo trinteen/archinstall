@@ -278,15 +278,10 @@ echo "=> 6. Post-install chroot settings"
     #=> Enable CachyOS:
     if [ "${V_CACHYOS_REPO}" == "enable" ];then
         echo ":: CachyOS Repo: ${V_CACHYOS_REPO}"
-        #curl https://mirror.cachyos.org/cachyos-repo.tar.xz -o cachyos-repo.tar.xz
         arch-chroot /mnt bash -c "curl https://mirror.cachyos.org/cachyos-repo.tar.xz -o cachyos-repo.tar.xz" 2> /dev/null || error_log "CachyOS Repo - Download error"
-        #tar xvf cachyos-repo.tar.xz && cd cachyos-repo
         arch-chroot /mnt bash -c "tar xvf cachyos-repo.tar.xz" 2> /dev/null || error_log "CachyOS Repo - Extract data"
-        #sed -i 's/pacman -/pacman --noconfirm -/g' cachyos-repo.sh
         arch-chroot /mnt bash -c "cd cachyos-repo && sed -i 's/pacman -/pacman --noconfirm -/g' cachyos-repo.sh" 2> /dev/null || error_log "CachyOS Repo - Automation fix"
-        #sudo ./cachyos-repo.sh
         arch-chroot /mnt bash -c "cd cachyos-repo && ./cachyos-repo.sh" 2> /dev/null || error_log "CachyOS Repo - Instalation"
-        cd ..
     fi
 
     #=> Enable Chaotic-aur
