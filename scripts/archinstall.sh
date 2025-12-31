@@ -200,6 +200,7 @@ echo "=> 5. INSTALLING NEW SYSTEM TO ${V_SYS_HD}"
 
     #=> Enable CachyOS:
     if [ "${V_CACHYOS_REPO}" == "enable" ];then
+        echo ":: CachyOS Repo: ${V_CACHYOS_REPO}"
         curl https://mirror.cachyos.org/cachyos-repo.tar.xz -o cachyos-repo.tar.xz
         tar xvf cachyos-repo.tar.xz && cd cachyos-repo
         sudo ./cachyos-repo.sh
