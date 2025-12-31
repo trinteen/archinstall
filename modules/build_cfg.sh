@@ -17,5 +17,6 @@ build_cfg() {
     CFG+="export V_CPU_TYPE=\"${install_gui_cpu}\"\n"
     CFG+="export V_GPU_SEL=\"${install_gui_gpu}\"\n"
     CFG+="export V_SERVICES_MY=(\"$(echo ${install_gui_services})\")\n"
+    CFG+="export V_CACHYOS_REPO=(\"$(echo ${install_gui_cachyos_enable})\")\n"
     echo -e "${CFG}" > archinstall_setup_cfg.sh
 }

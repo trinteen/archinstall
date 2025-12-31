@@ -198,6 +198,14 @@ echo "=> 5. INSTALLING NEW SYSTEM TO ${V_SYS_HD}"
     pacman --noconfirm --needed -Sy pacman-contrib || error_log "PACMAN install pacman.contrib problem."
     reflector --verbose --sort rate -l 20 -c ${V_COUNTRY} --save /etc/pacman.d/mirrorlist
 
+    #=> Enable CachyOS:
+    if [ "${V_CACHYOS_REPO}" == "enable" ];then
+        curl https://mirror.cachyos.org/cachyos-repo.tar.xz -o cachyos-repo.tar.xz
+        tar xvf cachyos-repo.tar.xz && cd cachyos-repo
+        sudo ./cachyos-repo.sh
+        cd ..
+    fi
+
     #=> Run pacstrap:
     echo ":: Downloading packages for NEW SYSTEM"
     pacstrap /mnt base btrfs-progs wget base-devel cups linux linux-headers linux-firmware nano git mc avahi samba smbclient gvfs gvfs-smb exfat-utils xorg fish networkmanager network-manager-applet efibootmgr wireless_tools wpa_supplicant os-prober mtools ${V_GPU} ${V_CPU_UCODE} ${V_GUI} || error_log "Install base system problem."

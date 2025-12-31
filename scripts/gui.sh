@@ -30,6 +30,7 @@ source "./modules/build_cfg.sh"
 source "./modules/bootpar.sh"
 source "./modules/swappar.sh"
 source "./modules/run_install.sh"
+source "./modules/cachyos_repo.sh"
 
 #=> Start:
 #=========

@@ -39,6 +39,7 @@ install_gui_menu_func() {
     MENU+=("${SPA}"  "$(echo "==============================" | sed 's/=/\xc2\xa0/g')")
     MENU+=("E"  "$(echo "Custom size BOOT partition  [${install_gui_bootpar_ok}]" | sed 's/ /\xc2\xa0/g')")
     MENU+=("R"  "$(echo "Custom size SWAP partition  [${install_gui_swappar_ok}]" | sed 's/ /\xc2\xa0/g')")
+    MENU+=("C"  "$(echo "Enable CachyOS Repo         [${install_gui_cachyos_ok}]" | sed 's/ /\xc2\xa0/g')")
     MENU+=("${SPA}"  "$(echo "==============================" | sed 's/=/\xc2\xa0/g')")
 
     MENU+=("X"  "$(echo "EXIT" | sed 's/ /\xc2\xa0/g')")
@@ -99,6 +100,9 @@ install_gui_menu_func() {
             ;;
         R)
             install_gui_swappar_func
+            ;;
+        C)
+            install_gui_cachyos_func
             ;;
         X)
             echo "Exit"; clear
