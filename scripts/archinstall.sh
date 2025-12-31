@@ -20,7 +20,7 @@ fi
 if  [[ ${V_GPU_SEL} == "amd" ]]; then
     export V_GPU="libva-mesa-driver mesa vulkan-radeon xf86-video-amdgpu xf86-video-ati xorg-server xorg-xinit"
 elif [[ ${V_GPU_SEL} == "intel" ]]; then
-    export V_GPU="intel-media-driver libva-intel-driver mesa vulkan-intel xorg-server xorg-xinit"
+    export V_GPU="intel-media-driver libva-intel-driver mesa vulkan-intel xorg-server xorg-xinit intel-graphics-compiler"
 elif [[ ${V_GPU_SEL} == "nvida-new" ]]; then
     export V_GPU="dkms nvidia-open nvidia-open-dkms xorg-server xorg-xinit"
 elif [[ ${V_GPU_SEL} == "nvidia-open" ]]; then
