@@ -203,6 +203,7 @@ echo "=> 5. INSTALLING NEW SYSTEM TO ${V_SYS_HD}"
         echo ":: CachyOS Repo: ${V_CACHYOS_REPO}"
         curl https://mirror.cachyos.org/cachyos-repo.tar.xz -o cachyos-repo.tar.xz
         tar xvf cachyos-repo.tar.xz && cd cachyos-repo
+        sed -i 's/pacman -/pacman --noconfirm -/g' cachyos-repo.sh
         sudo ./cachyos-repo.sh
         cd ..
     fi
