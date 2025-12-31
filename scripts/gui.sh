@@ -2,7 +2,13 @@
 
 #=> Size window:
 #===============
-AUTHOR_T="(c)2025 TRINTEEN - ArchLinux Install Script"
+SINCE=2025
+if [ "${SINCE}" == "$(date +%Y)" ];then
+    YEAR="${SINCE}"
+else
+    YEAR="${SINCE} - $(date +%Y)"
+fi
+AUTHOR_T="(c)${YEAR} TRINTEEN - ArchLinux Install Script"
 WINDOW_H=0
 WINDOW_W=0
 WINDOW_L=0
