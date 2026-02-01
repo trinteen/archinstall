@@ -81,7 +81,7 @@ elif [[ ${V_GUI_SEL} == "kde" ]]; then
 
 # lxqt
 elif [[ ${V_GUI_SEL} == "lxqt" ]]; then
-    export V_GUI="xfce4-terminal lightdm lightdm-gtk-greeter breeze-icons leafpad lxqt oxygen-icons slock ttf-freefont xdg-utils"
+    export V_GUI="xfce4-terminal lightdm lightdm-gtk-greeter breeze-icons lxqt oxygen-icons slock ttf-freefont xdg-utils"
     export V_SERVICES=("lightdm.service ${V_SERVICES_MY}")
 
 # mate
